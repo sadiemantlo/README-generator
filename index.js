@@ -4,6 +4,7 @@ const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 const renderLicenseBadge = require('./utils/generateMarkdown');
 
+function init() {
     inquirer.prompt ([
         {
             type: 'input',
@@ -59,10 +60,7 @@ const renderLicenseBadge = require('./utils/generateMarkdown');
         fs.writeFile('README.md', readMeContent, (err) =>
             err ? console.log(err) : console.log('Successfully created README.md'));
             module.exports.chosenLicense = chosenLicense;
-    });
+    })
+}
 
-// TODO: Create a function to initialize app
-// function init() {}
-
-// Function call to initialize app
-// init();
+init();
